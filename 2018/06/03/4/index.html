@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      rest设计原则的总结 | 李宜衡的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="李宜衡">
+    
+    
+
+    <meta name="description" content="零.原因最近一直在学一个视频教程，视频中的老师介绍了一个rest原则，虽然感觉当时懂了，然后发现没多久就忘了，所以决定写这个来加深一下印象。 一   网络应用程序，分为前端和后端两个部分。当前的发展趋势，就是前端设备层出不穷（手机、平板、桌面电脑、其他专用设备……）。 因此，必须有一种统一的机制，方便不同的前端设备与后端进行通信。目前主流的标准基本上是两个rest和soap（我了解的）。 SOAP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rest设计原则的总结 | 李宜衡的博客">
+<meta property="og:url" content="http://yoursite.com/2018/06/03/4/index.html">
+<meta property="og:site_name" content="李宜衡的博客">
+<meta property="og:description" content="零.原因最近一直在学一个视频教程，视频中的老师介绍了一个rest原则，虽然感觉当时懂了，然后发现没多久就忘了，所以决定写这个来加深一下印象。 一   网络应用程序，分为前端和后端两个部分。当前的发展趋势，就是前端设备层出不穷（手机、平板、桌面电脑、其他专用设备……）。 因此，必须有一种统一的机制，方便不同的前端设备与后端进行通信。目前主流的标准基本上是两个rest和soap（我了解的）。 SOAP">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-8.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-9.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-10.png">
+<meta property="og:updated_time" content="2018-06-09T02:11:13.268Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="rest设计原则的总结 | 李宜衡的博客">
+<meta name="twitter:description" content="零.原因最近一直在学一个视频教程，视频中的老师介绍了一个rest原则，虽然感觉当时懂了，然后发现没多久就忘了，所以决定写这个来加深一下印象。 一   网络应用程序，分为前端和后端两个部分。当前的发展趋势，就是前端设备层出不穷（手机、平板、桌面电脑、其他专用设备……）。 因此，必须有一种统一的机制，方便不同的前端设备与后端进行通信。目前主流的标准基本上是两个rest和soap（我了解的）。 SOAP">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-8.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">李宜衡的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lll2287217556" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">rest设计原则的总结</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-06-03" class="post-meta__date date">2018-06-03</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="零-原因"><a href="#零-原因" class="headerlink" title="零.原因"></a>零.原因</h3><p>最近一直在学一个视频教程，视频中的老师介绍了一个rest原则，虽然感觉当时懂了，然后发现没多久就忘了，所以决定写这个来加深一下印象。</p>
+<h3 id="一"><a href="#一" class="headerlink" title="一"></a>一</h3><p>   网络应用程序，分为前端和后端两个部分。当前的发展趋势，就是前端设备层出不穷（手机、平板、桌面电脑、其他专用设备……）。</p>
+<p>因此，必须有一种统一的机制，方便不同的前端设备与后端进行通信。目前主流的标准基本上是两个rest和soap（我了解的）。</p>
+<h5 id="SOAP"><a href="#SOAP" class="headerlink" title="SOAP"></a>SOAP</h5><p>什么是 SOAP，我想不用多说，google 一把满眼都是。其实 SOAP 最早是针对 RPC 的一种解决方案，简单对象访问协议，很轻量，同时作为应用协议可以基于多种传输协议来传递消息（Http,SMTP 等）。但是随着 SOAP 作为 WebService 的广泛应用，不断地增加附加的内容，使得现在开发人员觉得 SOAP 很重，使用门槛很高。在 SOAP 后续的发展过程中，WS-* 一系列协议的制定，增加了 SOAP 的成熟度，也给 SOAP 增加了负担。</p>
+<h5 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h5><p>REST 其实并不是什么协议也不是什么标准，而是将 Http 协议的设计初衷作了诠释，在 Http 协议被广泛利用的今天，越来越多的是将其作为传输协议，而非原先设计者所考虑的应用协议。SOAP 类型的 WebService 就是最好的例子，SOAP 消息完全就是将 Http 协议作为消息承载，以至于对于 Http 协议中的各种参数（例如编码，错误码等）都置之不顾。其实，最轻量级的应用协议就是 Http 协议。Http 协议所抽象的 get,post,put,delete 就好比数据库中最基本的增删改查，而互联网上的各种资源就好比数据库中的记录（可能这么比喻不是很好），对于各种资源的操作最后总是能抽象成为这四种基本操作，在定义了定位资源的规则以后，对于资源的操作通过标准的 Http 协议就可以实现，开发者也会受益于这种轻量级的协议。</p>
+<h3 id="两者的特点"><a href="#两者的特点" class="headerlink" title="两者的特点"></a>两者的特点</h3><p><img src="\images\pasted-8.png" alt="upload successful"><br><img src="\images\pasted-9.png" alt="upload successful"></p>
+<p><img src="\images\pasted-10.png" alt="upload successful"></p>
+<h3 id="三-rest的使用"><a href="#三-rest的使用" class="headerlink" title="三.rest的使用"></a>三.rest的使用</h3><h4 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h4><p>我暂时了解到的使用就是定义路由时用对应的关键字对应相应的功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET /users - 获取 user 列表</span><br><span class="line">GET /users/12 - 获取指定 ID 为 12 的 user 对象</span><br><span class="line">POST /users - 创建一个新的 user</span><br><span class="line">PUT /users/12 - 更新 id 为 12 的 user</span><br><span class="line">PATCH /users/12 - 对 id 为 12 的 user 进行部分更新</span><br><span class="line">DELETE /users/12 - 删除 id 为 12 的 user</span><br></pre></td></tr></table></figure></p>
+<p>这样更加语义化，看到路由就能大致猜到是什么功能，<br>然后由于rest是基于资源的所以提倡的是前端请求什么就返回什么，不去细分我现在只能意会暂时不知咋说，这种对于团队开发自然不好，但是对外人调用却只能这样，因为你并不知道他到底想要什么，所以对rest的使用应该看情况而定，不要太过死板。</p>
+<h4 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h4><p>rest中异常应该抛出错误码让人们能比较快速的定位到错误的原因，错误码由自己确定，<br>但有一些常见的是约定俗成的，常见的如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">400	（错误请求）服务器不理解请求的语法。</span><br><span class="line">401	（未授权）请求要求身份验证。对于需要 token 的接口，服务器可能返回此响应。</span><br><span class="line">403	（禁止）服务器拒绝请求。对于群组 / 聊天室服务，表示本次调用不符合群组 / 聊天室操作的正确逻辑，例如调用添加成员接口，添加已经在群组里的用户，或者移除聊天室中不存在的成员等操作。</span><br><span class="line">404	（未找到）服务器找不到请求的接口。</span><br><span class="line">408	（请求超时）服务器等候请求时发生超时。</span><br><span class="line">413	（请求体过大）请求体超过了 5kb，拆成更小的请求体重试即可。</span><br><span class="line">415	请求体的类型不支持。</span><br><span class="line">429	（服务不可用）请求接口超过调用频率限制，即接口被限流。或超过社区版限制，如有需要可联系商务。</span><br><span class="line">500	（服务器内部错误）服务器遇到错误，无法完成请求。</span><br><span class="line">501	（尚未实施）服务器不具备完成请求的功能。例如，服务器无法识别请求方法时可能会返回此代码。</span><br><span class="line">502	（错误网关）服务器作为网关或代理，从上游服务器收到无效响应。</span><br><span class="line">503	（服务不可用）请求接口超过调用频率限制，即接口被限流。</span><br><span class="line">504	（网关超时）服务器作为网关或代理，但是没有及时从上游服务器收到请求。</span><br></pre></td></tr></table></figure></p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119540575-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119540575-1');
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

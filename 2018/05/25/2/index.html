@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      1对1，多对1，多对多总结 | 李宜衡的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="李宜衡">
+    
+    
+
+    <meta name="description" content="thinkPHP5中的数据库的关系基本分为：一对一、多对一、多对多这三种 一.引例1、一对一关系实例  一个老师对应一个id，一个id对应一个老师    2、多对一关系实例     一个班级拥有多个学生，一个学生只能够属于某个班级   3、多对多实例  一个学生可以选修多门课程，一个课程可以被多个学生选修  二.一对一一对一的关系下，thinkPHP框架可以直接访问数据库中的数据，像下面一样123">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1对1，多对1，多对多总结 | 李宜衡的博客">
+<meta property="og:url" content="http://yoursite.com/2018/05/25/2/index.html">
+<meta property="og:site_name" content="李宜衡的博客">
+<meta property="og:description" content="thinkPHP5中的数据库的关系基本分为：一对一、多对一、多对多这三种 一.引例1、一对一关系实例  一个老师对应一个id，一个id对应一个老师    2、多对一关系实例     一个班级拥有多个学生，一个学生只能够属于某个班级   3、多对多实例  一个学生可以选修多门课程，一个课程可以被多个学生选修  二.一对一一对一的关系下，thinkPHP框架可以直接访问数据库中的数据，像下面一样123">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-5.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-6.png">
+<meta property="og:updated_time" content="2018-05-25T12:55:33.027Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="1对1，多对1，多对多总结 | 李宜衡的博客">
+<meta name="twitter:description" content="thinkPHP5中的数据库的关系基本分为：一对一、多对一、多对多这三种 一.引例1、一对一关系实例  一个老师对应一个id，一个id对应一个老师    2、多对一关系实例     一个班级拥有多个学生，一个学生只能够属于某个班级   3、多对多实例  一个学生可以选修多门课程，一个课程可以被多个学生选修  二.一对一一对一的关系下，thinkPHP框架可以直接访问数据库中的数据，像下面一样123">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-5.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">李宜衡的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lll2287217556" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">1对1，多对1，多对多总结</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-05-25" class="post-meta__date date">2018-05-25</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>thinkPHP5中的数据库的关系基本分为：一对一、多对一、多对多这三种</p>
+<h3 id="一-引例"><a href="#一-引例" class="headerlink" title="一.引例"></a>一.引例</h3><p>1、一对一关系实例</p>
+<ul>
+<li>一个老师对应一个id，一个id对应一个老师  </li>
+</ul>
+<p>2、多对一关系实例   </p>
+<ul>
+<li>一个班级拥有多个学生，一个学生只能够属于某个班级 </li>
+</ul>
+<p>3、多对多实例</p>
+<ul>
+<li>一个学生可以选修多门课程，一个课程可以被多个学生选修</li>
+</ul>
+<h3 id="二-一对一"><a href="#二-一对一" class="headerlink" title="二.一对一"></a>二.一对一</h3><p>一对一的关系下，thinkPHP框架可以直接访问数据库中的数据，像下面一样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class TeacherController</span><br><span class="line">&#123;</span><br><span class="line">    public function index()</span><br><span class="line">    &#123;</span><br><span class="line">        $Teacher = new Teacher;</span><br><span class="line">        $teachers = $Teacher-&gt;select();</span><br><span class="line">        var_dump($teachers);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这样可以直接输出teacher的所有信息</p>
+<h3 id="三-多对一"><a href="#三-多对一" class="headerlink" title="三.多对一"></a>三.多对一</h3><p>多对一的关系</p>
+<p><img src="\images\pasted-5.png" alt="upload successful"><br>如上图<br>在thinkPHP5中<br>多个学生对应于一个班级，这种情况下的访问法则为：<br>2、在这个方法中，通过一个id字段来获取这个对象；  </p>
+<p>3、返回这个对象。<br>4，用该对象访问各种数据</p>
+<p>以一个klass类为例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> public function Klass()</span><br><span class="line">&#123;</span><br><span class="line">   return $this-&gt;belongsTo(&apos;Klass&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="四-多对多"><a href="#四-多对多" class="headerlink" title="四.多对多"></a>四.多对多</h3><p>多对多的访问比较复杂，需要通过中间表来完成，像这样</p>
+<p><img src="\images\pasted-6.png" alt="upload successful"><br>通过访问中间表来取得班级对应的课程<br>在thinkPHP5中可以自动对中间表进行操作，十分方便<br>但是thinkPHP中同样存在着bug<br>BUG1：<br>在Course中关联Klass，如果不加任何设置（直接将代码写为：return $this-&gt;belongsToMany(‘Klass’);），thinkphp 会尝试找course_klass这张表；而在Klass中关联Course，那么 thinkphp 则会尝试找klass_course这张表。显然，中间表只能有一个名字。这就使得我们在使用多对多关联时，还需要设置中间表的名字。</p>
+<p>BUG2：<br>当我们传入表名时，thinkphp 没有自动为我们加入表前缀。这使得我们需要手动的进行配置，但显然我更希望默认是自动加入表前缀的。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119540575-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119540575-1');
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>

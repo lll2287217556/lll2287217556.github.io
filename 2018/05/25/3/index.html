@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      安装新版 xampp 后 apache 无法启动提示：Apache Service detected with wrong path 解决方案 | 李宜衡的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="李宜衡">
+    
+    
+
+    <meta name="description" content="开始的时候xampp莫名其妙的报端口占用的错误，但是第一次重装软件就解决了最近又遇到了这个错误重装软件后变成了这个错误123Apache Service detected with wrong path.Change XAMPP Apache and Control Panel settings orUninstall/disable the other service manually firs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安装新版 xampp 后 apache 无法启动提示：Apache Service detected with wrong path 解决方案 | 李宜衡的博客">
+<meta property="og:url" content="http://yoursite.com/2018/05/25/3/index.html">
+<meta property="og:site_name" content="李宜衡的博客">
+<meta property="og:description" content="开始的时候xampp莫名其妙的报端口占用的错误，但是第一次重装软件就解决了最近又遇到了这个错误重装软件后变成了这个错误123Apache Service detected with wrong path.Change XAMPP Apache and Control Panel settings orUninstall/disable the other service manually firs">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-25T12:54:41.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="安装新版 xampp 后 apache 无法启动提示：Apache Service detected with wrong path 解决方案 | 李宜衡的博客">
+<meta name="twitter:description" content="开始的时候xampp莫名其妙的报端口占用的错误，但是第一次重装软件就解决了最近又遇到了这个错误重装软件后变成了这个错误123Apache Service detected with wrong path.Change XAMPP Apache and Control Panel settings orUninstall/disable the other service manually firs">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">李宜衡的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lll2287217556" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">安装新版 xampp 后 apache 无法启动提示：Apache Service detected with wrong path 解决方案</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-05-25" class="post-meta__date date">2018-05-25</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>开始的时候xampp莫名其妙的报端口占用的错误，但是第一次重装软件就解决了<br>最近又遇到了这个错误重装软件后变成了这个错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Apache Service detected with wrong path.Change XAMPP Apache and Control Panel settings orUninstall/disable the other service manually first</span><br><span class="line">Found Path: &quot;H:\program files\xampp\apache\bin\httpd.exe&quot; -k runservice</span><br><span class="line">Expected Path: &quot;h:\xampp\apache\bin\httpd.exe&quot; -k runservice</span><br></pre></td></tr></table></figure></p>
+<p>我从网上找到了两种解决方法</p>
+<h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>还好没有出现端口被占用的情况，这是启动路径出现了错误，Found Path: “H:\program files\xampp\apache\bin\httpd.exe” -k runservice 这个是我以前老版本安装的路径，”h:\xampp\apache\bin\httpd.exe” -k runservice 这个才是我现在安装的路径，如何修改咧？</p>
+<pre><code>首先，检查一下自己的环境变量的 path 中是否还残留以前自己添加的 xampp 路径，如果有就删掉，如果没有就进行下一步。
+
+然后就要进入自己的注册表：win+r 打开运行对话框 ---&gt; 输入 regedit 回车，进入注册表 ---&gt; 点击 HKEY_LOCAL_MACHINE----&gt;SYSTEM----&gt;currentControlSet----&gt;Services----&gt; 找到 Apache2.4，你就会在右边款到
+</code></pre><p>ImagePath 看看那个路径是不是以前那个版本的路径，如果是就选中 ImagePath 点击右键修改，把 xampp 里面提示的 Expected Path 后面的路径粘贴进去，然后确定。</p>
+<pre><code>最后，重启 xampp 就可以了，启动 apache. 如果你的 mysql,filezilla 也出现路径问题，也可以按上面的方法修改。  
+偶然发现了第二种更加简便的方法，尝试之下有效
+</code></pre><h3 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h3><pre><code>解决办法：Just uncheck and check button in Module Services column. It will automatically delete old service and start new service with new path. It happens when you delete xampp folder directly without stopping services.
+</code></pre><p>即点击 xampp 面板上 mysql 旁边的绿色勾勾，即可重新卸载旧的服务安装新的 mysql 服务。同时最好把 xampp 上的 mysql 配置文件和 xampp 配置文件里的 mysql 端口都改成 3307，以免和原来已经安装的 mysql 服务端口冲突。</p>
+<p>若要重新启用原来安装的 mysql，管理员权限登录 cmd，D:\Program<br> Files\MySQL\MySQL Server 5.5\bin &gt; 下 mysqld.exe –install 就重新安装了服务了</p>
+<p>ps: 修改原来机子的服务的名字可以完美解决 MySQL Service detected with wrong path 的问题，运行 mysqld.exe<br> –install –install MySQLhappy 可以得到名字为 MySQLhappy 的服务名，那样就不会有上述的冲突了</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119540575-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119540575-1');
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
