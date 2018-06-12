@@ -43,9 +43,17 @@
     <link href="http://yoursite.com/2018/06/12/test/"/>
     <id>http://yoursite.com/2018/06/12/test/</id>
     <published>2018-06-12T10:53:25.000Z</published>
-    <updated>2018-06-12T10:53:25.811Z</updated>
+    <updated>2018-06-12T14:27:38.837Z</updated>
+    
+    <content type="html"><![CDATA[<p>tr23</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;tr23&lt;/p&gt;
+
+      
     
     </summary>
     
