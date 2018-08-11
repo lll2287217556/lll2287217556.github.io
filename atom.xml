@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-06-15T07:45:47.983Z</updated>
+  <updated>2018-08-11T02:56:19.296Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git使用总结</title>
+    <link href="http://yoursite.com/2018/08/10/git%E4%BD%BF%E7%94%A8%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93/"/>
+    <id>http://yoursite.com/2018/08/10/git使用学习总结/</id>
+    <published>2018-08-10T13:34:45.000Z</published>
+    <updated>2018-08-11T02:56:19.296Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="1-git是什么"><a href="#1-git是什么" class="headerlink" title="1.git是什么"></a>1.git是什么</h3><p>git是一个版本控制工具，目前来说，git给我最大的印象就是团队协作开发十分方便，大家在自己的电脑写程序，提交时会自动的显示出不同，便于管理者查看是否要将其合并到master上。<br>当然git还有一个重要的功能：版本控制，由于暂时没有怎么使用过在此不多介绍。</p><h3 id="2-git常用命令"><a href="#2-git常用命令" class="headerlink" title="2.git常用命令"></a>2.git常用命令</h3><p>git有两个客户端：</p><p>一个是git的命令行的客户端</p><p><img src="\images\pasted-15.png" alt="upload successful"></p><p>一个是github的桌面端</p><p><img src="\images\pasted-18.png" alt="upload successful"></p><p>先说的是git的命令行</p><p>git有许多十分方便强大的命令：</p><h5 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h5><pre><code>在本地新建一个 repo, 进入一个项目目录, 执行 git init, 会初始化一个 repo, 并在当前文件夹下创建一个. git 文件夹.有了.git文件夹才能和github联系起来。</code></pre><h5 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h5><pre><code>获取一个 url 对应的远程 Git repo, 创建一个 local copy.一般的格式是 git clone [url].clone 下来的 repo 会以 url 最后一个斜线后面的名称命名, 创建一个文件夹, 如果想要指定特定的名称, 可以 git clone [url] newname 指定.</code></pre><h5 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h5><pre><code>git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被 Git tracked 到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.</code></pre><h5 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h5><pre><code>git checkout (branchname)   切换到一个分支.   git checkout -b (branchname): 创建并切换到新的分支.   这个命令是将 git branch newbranch 和 git checkout newbranch 合在一起的结果.   checkout 还有另一个作用: 替换本地改动: git checkout --&lt;filename&gt; 此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件. 已添加到暂存区的改动以及新文件都不会受到影响. 注意: git checkout filename 会删除该文件中所有没有暂存和提交的改动, 这个操作是不可逆的.</code></pre><p> 当然git的命令远远不止这些，这些只是我用过的或者见过他人使用的。</p><h3 id="3-github客户端的使用流程"><a href="#3-github客户端的使用流程" class="headerlink" title="3.github客户端的使用流程"></a>3.github客户端的使用流程</h3><p>使用git命令行当然可以完成关于git的所有操作，但就提交代码来说，github的桌面客户端无疑要方便许多</p><p><img src="\images\pasted-12.png" alt="upload successful"></p><p>使用流程就是这样</p><h4 id="1-gt-2-gt-3-gt-4-gt-creat-pull-request"><a href="#1-gt-2-gt-3-gt-4-gt-creat-pull-request" class="headerlink" title="1-&gt;2-&gt;3-&gt;4-&gt;creat pull request"></a>1-&gt;2-&gt;3-&gt;4-&gt;creat pull request</h4><p>在1处写下一个总结性的标题<br>然后在2处关联issue，同时在关联issue时可以用关键字让这个issue自动关闭，当这个puull request被合并时，issue就会自动关闭</p><h5 id="Closes-123”-or-“Closes-123"><a href="#Closes-123”-or-“Closes-123" class="headerlink" title="Closes #123” or “Closes: #123"></a>Closes #123” or “Closes: #123</h5><p>就像这样，这样的关键字还有很多：</p><ul><li>close</li><li>closes</li><li>closed</li><li>fix</li><li>fixes</li><li>fixed</li><li>resolve</li><li>resolves</li><li>resolved</li></ul><p>然后还可以用关键字关闭不同创库的issue用法如下：</p><h5 id="Closes-example-user-example-repo-76"><a href="#Closes-example-user-example-repo-76" class="headerlink" title="Closes example_user/example_repo#76"></a>Closes example_user/example_repo#76</h5><p>当该pull request被同意时，就会关闭相应的分支，</p><p>同样可以一次关闭多个issue：</p><h5 id="This-closes-34-closes-23-and-closes-example-user-example-repo-42"><a href="#This-closes-34-closes-23-and-closes-example-user-example-repo-42" class="headerlink" title="This closes #34, closes #23, and closes example_user/example_repo#42"></a>This closes #34, closes #23, and closes example_user/example_repo#42</h5><h3 id="4-结束"><a href="#4-结束" class="headerlink" title="4.结束"></a>4.结束</h3><p>开始使用git时犯了很多错误，但随着使用渐渐有了头绪，<br>git和编程语言一样都是一个工具，而工具不是光靠了解理论就行的，对于工具我们只有靠多加使用才能熟能生巧。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;1-git是什么&quot;&gt;&lt;a href=&quot;#1-git是什么&quot; class=&quot;headerlink&quot; title=&quot;1.git是什么&quot;&gt;&lt;/a&gt;1.git是什么&lt;/h3&gt;&lt;p&gt;git是一个版本控制工具，目前来说，git给我最大的印象就是团队协作开发十分方便，大家在自己
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>php  curl学习总结</title>

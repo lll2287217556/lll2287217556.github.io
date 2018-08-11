@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      git使用总结 | 李宜衡的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="李宜衡">
+    
+    
+
+    <meta name="description" content="1.git是什么git是一个版本控制工具，目前来说，git给我最大的印象就是团队协作开发十分方便，大家在自己的电脑写程序，提交时会自动的显示出不同，便于管理者查看是否要将其合并到master上。当然git还有一个重要的功能：版本控制，由于暂时没有怎么使用过在此不多介绍。 2.git常用命令git有两个客户端： 一个是git的命令行的客户端  一个是github的桌面端  先说的是git的命令行 g">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git使用总结 | 李宜衡的博客">
+<meta property="og:url" content="http://yoursite.com/2018/08/10/git使用学习总结/index.html">
+<meta property="og:site_name" content="李宜衡的博客">
+<meta property="og:description" content="1.git是什么git是一个版本控制工具，目前来说，git给我最大的印象就是团队协作开发十分方便，大家在自己的电脑写程序，提交时会自动的显示出不同，便于管理者查看是否要将其合并到master上。当然git还有一个重要的功能：版本控制，由于暂时没有怎么使用过在此不多介绍。 2.git常用命令git有两个客户端： 一个是git的命令行的客户端  一个是github的桌面端  先说的是git的命令行 g">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-15.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-18.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-12.png">
+<meta property="og:updated_time" content="2018-08-11T02:56:19.296Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git使用总结 | 李宜衡的博客">
+<meta name="twitter:description" content="1.git是什么git是一个版本控制工具，目前来说，git给我最大的印象就是团队协作开发十分方便，大家在自己的电脑写程序，提交时会自动的显示出不同，便于管理者查看是否要将其合并到master上。当然git还有一个重要的功能：版本控制，由于暂时没有怎么使用过在此不多介绍。 2.git常用命令git有两个客户端： 一个是git的命令行的客户端  一个是github的桌面端  先说的是git的命令行 g">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-15.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">李宜衡的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lll2287217556" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">git使用总结</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-08-10" class="post-meta__date date">2018-08-10</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="1-git是什么"><a href="#1-git是什么" class="headerlink" title="1.git是什么"></a>1.git是什么</h3><p>git是一个版本控制工具，目前来说，git给我最大的印象就是团队协作开发十分方便，大家在自己的电脑写程序，提交时会自动的显示出不同，便于管理者查看是否要将其合并到master上。<br>当然git还有一个重要的功能：版本控制，由于暂时没有怎么使用过在此不多介绍。</p>
+<h3 id="2-git常用命令"><a href="#2-git常用命令" class="headerlink" title="2.git常用命令"></a>2.git常用命令</h3><p>git有两个客户端：</p>
+<p>一个是git的命令行的客户端</p>
+<p><img src="\images\pasted-15.png" alt="upload successful"></p>
+<p>一个是github的桌面端</p>
+<p><img src="\images\pasted-18.png" alt="upload successful"></p>
+<p>先说的是git的命令行</p>
+<p>git有许多十分方便强大的命令：</p>
+<h5 id="git-init"><a href="#git-init" class="headerlink" title="git init"></a>git init</h5><pre><code>在本地新建一个 repo, 进入一个项目目录, 执行 git init, 会初始化一个 repo, 并在当前文件夹下创建一个. git 文件夹.有了.git文件夹才能和github联系起来。
+</code></pre><h5 id="git-clone"><a href="#git-clone" class="headerlink" title="git clone"></a>git clone</h5><pre><code>获取一个 url 对应的远程 Git repo, 创建一个 local copy.
+一般的格式是 git clone [url].
+clone 下来的 repo 会以 url 最后一个斜线后面的名称命名, 创建一个文件夹, 如果想要指定特定的名称, 可以 git clone [url] newname 指定.
+</code></pre><h5 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h5><pre><code>git status命令用于显示工作目录和暂存区的状态。使用此命令能看到那些修改被暂存到了, 哪些没有, 哪些文件没有被 Git tracked 到。git status不显示已经commit到项目历史中去的信息。看项目历史的信息要使用git log.
+</code></pre><h5 id="git-checkout"><a href="#git-checkout" class="headerlink" title="git checkout"></a>git checkout</h5><pre><code>git checkout (branchname)  
+ 切换到一个分支.  
+ git checkout -b (branchname): 创建并切换到新的分支.  
+ 这个命令是将 git branch newbranch 和 git checkout newbranch 合在一起的结果.  
+ checkout 还有另一个作用: 替换本地改动:
+ git checkout --&lt;filename&gt;
+ 此命令会使用 HEAD 中的最新内容替换掉你的工作目录中的文件. 已添加到暂存区的改动以及新文件都不会受到影响.
+ 注意: git checkout filename 会删除该文件中所有没有暂存和提交的改动, 这个操作是不可逆的.
+</code></pre><p> 当然git的命令远远不止这些，这些只是我用过的或者见过他人使用的。</p>
+<h3 id="3-github客户端的使用流程"><a href="#3-github客户端的使用流程" class="headerlink" title="3.github客户端的使用流程"></a>3.github客户端的使用流程</h3><p>使用git命令行当然可以完成关于git的所有操作，但就提交代码来说，github的桌面客户端无疑要方便许多</p>
+<p><img src="\images\pasted-12.png" alt="upload successful"></p>
+<p>使用流程就是这样</p>
+<h4 id="1-gt-2-gt-3-gt-4-gt-creat-pull-request"><a href="#1-gt-2-gt-3-gt-4-gt-creat-pull-request" class="headerlink" title="1-&gt;2-&gt;3-&gt;4-&gt;creat pull request"></a>1-&gt;2-&gt;3-&gt;4-&gt;creat pull request</h4><p>在1处写下一个总结性的标题<br>然后在2处关联issue，同时在关联issue时可以用关键字让这个issue自动关闭，当这个puull request被合并时，issue就会自动关闭</p>
+<h5 id="Closes-123”-or-“Closes-123"><a href="#Closes-123”-or-“Closes-123" class="headerlink" title="Closes #123” or “Closes: #123"></a>Closes #123” or “Closes: #123</h5><p>就像这样，这样的关键字还有很多：</p>
+<ul>
+<li>close</li>
+<li>closes</li>
+<li>closed</li>
+<li>fix</li>
+<li>fixes</li>
+<li>fixed</li>
+<li>resolve</li>
+<li>resolves</li>
+<li>resolved</li>
+</ul>
+<p>然后还可以用关键字关闭不同创库的issue用法如下：</p>
+<h5 id="Closes-example-user-example-repo-76"><a href="#Closes-example-user-example-repo-76" class="headerlink" title="Closes example_user/example_repo#76"></a>Closes example_user/example_repo#76</h5><p>当该pull request被同意时，就会关闭相应的分支，</p>
+<p>同样可以一次关闭多个issue：</p>
+<h5 id="This-closes-34-closes-23-and-closes-example-user-example-repo-42"><a href="#This-closes-34-closes-23-and-closes-example-user-example-repo-42" class="headerlink" title="This closes #34, closes #23, and closes example_user/example_repo#42"></a>This closes #34, closes #23, and closes example_user/example_repo#42</h5><h3 id="4-结束"><a href="#4-结束" class="headerlink" title="4.结束"></a>4.结束</h3><p>开始使用git时犯了很多错误，但随着使用渐渐有了头绪，<br>git和编程语言一样都是一个工具，而工具不是光靠了解理论就行的，对于工具我们只有靠多加使用才能熟能生巧。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119540575-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119540575-1');
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
