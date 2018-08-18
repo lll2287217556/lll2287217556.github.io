@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-11T02:56:19.296Z</updated>
+  <updated>2018-08-14T04:06:56.087Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>记一次失败的双系统安装</title>
+    <link href="http://yoursite.com/2018/08/14/%E8%AE%B0%E4%B8%80%E6%AC%A1%E5%A4%B1%E8%B4%A5%E7%9A%84%E5%8F%8C%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/"/>
+    <id>http://yoursite.com/2018/08/14/记一次失败的双系统安装/</id>
+    <published>2018-08-14T02:39:05.000Z</published>
+    <updated>2018-08-14T04:06:56.087Z</updated>
+    
+    <content type="html"><![CDATA[<p>这两天一直在尝试装win10+unbunt的双系统，两天耗下来可谓一路艰辛，虽然最后还是放弃了，但在解决各种问题中，也学到了不少。</p><h3 id="一-装ubuntu中遇到的问题"><a href="#一-装ubuntu中遇到的问题" class="headerlink" title="一.装ubuntu中遇到的问题"></a>一.装ubuntu中遇到的问题</h3><p>装系统的步骤网上一找一大堆，就不说了，就直接谈谈遇到的问题和解决办法吧。</p><h4 id="1-安装时卡在logo界面"><a href="#1-安装时卡在logo界面" class="headerlink" title="1.安装时卡在logo界面"></a>1.安装时卡在logo界面</h4><p>这是因为显卡驱动的原因，ubuntu自带的开源的N卡驱动不太好使，理论上是要安装一个新的的，但是安装安装过程会出现各种问题，我就是因此放弃了双系统。</p><p>解决办法：进入U盘启动之后，光标选定”install Ubuntu”之后，按“e”进入编辑页面（不是enter键确定），然后找到quiet splash—，空格添<br>加 nomodeset,按F10保存，即可正常进入。</p><p>网上有的说这只是临时方法，安装完成以后还会遇到，不过我就只在安装过程有这问题，理论上的永久解决办法：解决方法：修改grub.cfg文件，在该文件里面完成添加$vt_handoff acpi_osi=linux nomodeset的操作，并保存。</p><p>安装过程的问题基本就这一个。</p><h4 id="2-安装显卡驱动"><a href="#2-安装显卡驱动" class="headerlink" title="2.安装显卡驱动"></a>2.安装显卡驱动</h4><p>这对我是一个大问题，最后也没成功解决，完全按照教程，最后却无法进入登录界面，卡在了加载界面，重装了好多次，重启了无数次。</p><p>安装方法主要有三种<br>不管那种方式都得先禁用原来的驱动，否则会出现循环登录，或进不去系统的情况，两种情况我都遇到了，希望大家不要作死了。<br>禁用方法如下：<br>$sudo ls -lh /etc/modprobe.d/blacklist.conf</p><p>修改属性<br>$sudo chmod 666 /etc/modprobe.d/blacklist.conf</p><p>用gedit打开<br>$sudo gedit /etc/modpro<br>be.d/blacklist.conf</p><p>在该文件后添加以下几行：</p><p>blacklist vga16fb<br>blacklist nouveau<br>blacklist rivafb<br>blacklist rivatv<br>blacklist nvidiafb</p><p>sudo update-initramfs -u<br>（1）PPA源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:xorg-edgers/ppa #添加ppa源</span><br><span class="line">sudo add-apt-repository ppa:graphics-drivers/ppa #添加ppa源</span><br><span class="line">sudo apt-get update #更新apt-get</span><br><span class="line">要知道需要安装哪个类型的显卡驱动，可以使用如下指令查看 </span><br><span class="line">sudo add-apt-repository ppa:graphics-drivers</span><br><span class="line"></span><br><span class="line">sudo apt-get remove --purge nvidia*//卸载原有驱动</span><br><span class="line">sudo apt-get install nvidia-387此处根据上面找到的型号下载</span><br><span class="line">sudo apt-get install mesa-common-dev</span><br><span class="line">sudo apt-get install freeglut3-dev</span><br></pre></td></tr></table></figure></p><p>（2）.runfile安装<br>找到适合的正确的驱动，去nvidia驱动官网下载</p><p>卸载掉原有驱动</p><p>sudo apt-get remove –purge nvidia</p><p>禁用X服务<br>执行：</p><p>sudo /etc/init.d/lightdm stop</p><p>安装驱动<br>进入命令行界面<br>Ctrl-Alt+F1</p><p>给驱动run文件赋予执行权限<br>sudo chmod a+x NVIDIA-Linux-x86_64-375.20.run</p><p>安装(注意 参数)<br>sudo ./NVIDIA-Linux-x86_64-375.20.run –no-opengl-files</p><p>–no-opengl-files </p><p>只安装驱动文件，不安装OpenGL文件。这个参数最重要</p><p>–no-x-check </p><p>安装驱动时不检查X服务</p><p>–no-nouveau-check</p><p>安装驱动时不检查nouveau </p><p>后面两个参数可不加。</p><p>（3）用软件和更新安装</p><p><img src="\images\pasted-14.png" alt="upload successful"><br>这种办法可以可以说是最简单的了，但我也失败了</p><p>三种方法里我用过两种，runfile方法由于不太熟悉ubuntu的命令，看不太懂就没尝试，后来在虚拟机里面学习团队教程以后才明白了。</p><h3 id="二-总结"><a href="#二-总结" class="headerlink" title="二.总结"></a>二.总结</h3><p>这次装系统对ubuntu的命令行有了一定的了解，并且装了各种系统，中途甚至搞坏了两次windows，让我对系统的引导有了一定的了解，还有系统的分区等等，总得来说，这两天不亏。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这两天一直在尝试装win10+unbunt的双系统，两天耗下来可谓一路艰辛，虽然最后还是放弃了，但在解决各种问题中，也学到了不少。&lt;/p&gt;
+&lt;h3 id=&quot;一-装ubuntu中遇到的问题&quot;&gt;&lt;a href=&quot;#一-装ubuntu中遇到的问题&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>git使用总结</title>

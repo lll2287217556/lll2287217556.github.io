@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      记一次失败的双系统安装 | 李宜衡的博客 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="李宜衡">
+    
+    
+
+    <meta name="description" content="这两天一直在尝试装win10+unbunt的双系统，两天耗下来可谓一路艰辛，虽然最后还是放弃了，但在解决各种问题中，也学到了不少。 一.装ubuntu中遇到的问题装系统的步骤网上一找一大堆，就不说了，就直接谈谈遇到的问题和解决办法吧。 1.安装时卡在logo界面这是因为显卡驱动的原因，ubuntu自带的开源的N卡驱动不太好使，理论上是要安装一个新的的，但是安装安装过程会出现各种问题，我就是因此放弃">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记一次失败的双系统安装 | 李宜衡的博客">
+<meta property="og:url" content="http://yoursite.com/2018/08/14/记一次失败的双系统安装/index.html">
+<meta property="og:site_name" content="李宜衡的博客">
+<meta property="og:description" content="这两天一直在尝试装win10+unbunt的双系统，两天耗下来可谓一路艰辛，虽然最后还是放弃了，但在解决各种问题中，也学到了不少。 一.装ubuntu中遇到的问题装系统的步骤网上一找一大堆，就不说了，就直接谈谈遇到的问题和解决办法吧。 1.安装时卡在logo界面这是因为显卡驱动的原因，ubuntu自带的开源的N卡驱动不太好使，理论上是要安装一个新的的，但是安装安装过程会出现各种问题，我就是因此放弃">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/pasted-14.png">
+<meta property="og:updated_time" content="2018-08-14T04:06:56.087Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记一次失败的双系统安装 | 李宜衡的博客">
+<meta name="twitter:description" content="这两天一直在尝试装win10+unbunt的双系统，两天耗下来可谓一路艰辛，虽然最后还是放弃了，但在解决各种问题中，也学到了不少。 一.装ubuntu中遇到的问题装系统的步骤网上一找一大堆，就不说了，就直接谈谈遇到的问题和解决办法吧。 1.安装时卡在logo界面这是因为显卡驱动的原因，ubuntu自带的开源的N卡驱动不太好使，理论上是要安装一个新的的，但是安装安装过程会出现各种问题，我就是因此放弃">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-14.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">李宜衡的博客</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/lll2287217556" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">记一次失败的双系统安装</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2018-08-14" class="post-meta__date date">2018-08-14</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>这两天一直在尝试装win10+unbunt的双系统，两天耗下来可谓一路艰辛，虽然最后还是放弃了，但在解决各种问题中，也学到了不少。</p>
+<h3 id="一-装ubuntu中遇到的问题"><a href="#一-装ubuntu中遇到的问题" class="headerlink" title="一.装ubuntu中遇到的问题"></a>一.装ubuntu中遇到的问题</h3><p>装系统的步骤网上一找一大堆，就不说了，就直接谈谈遇到的问题和解决办法吧。</p>
+<h4 id="1-安装时卡在logo界面"><a href="#1-安装时卡在logo界面" class="headerlink" title="1.安装时卡在logo界面"></a>1.安装时卡在logo界面</h4><p>这是因为显卡驱动的原因，ubuntu自带的开源的N卡驱动不太好使，理论上是要安装一个新的的，但是安装安装过程会出现各种问题，我就是因此放弃了双系统。</p>
+<p>解决办法：进入U盘启动之后，光标选定”install Ubuntu”之后，按“e”进入编辑页面（不是enter键确定），然后找到quiet splash—，空格添<br>加 nomodeset,按F10保存，即可正常进入。</p>
+<p>网上有的说这只是临时方法，安装完成以后还会遇到，不过我就只在安装过程有这问题，理论上的永久解决办法：解决方法：修改grub.cfg文件，在该文件里面完成添加$vt_handoff acpi_osi=linux nomodeset的操作，并保存。</p>
+<p>安装过程的问题基本就这一个。</p>
+<h4 id="2-安装显卡驱动"><a href="#2-安装显卡驱动" class="headerlink" title="2.安装显卡驱动"></a>2.安装显卡驱动</h4><p>这对我是一个大问题，最后也没成功解决，完全按照教程，最后却无法进入登录界面，卡在了加载界面，重装了好多次，重启了无数次。</p>
+<p>安装方法主要有三种<br>不管那种方式都得先禁用原来的驱动，否则会出现循环登录，或进不去系统的情况，两种情况我都遇到了，希望大家不要作死了。<br>禁用方法如下：<br>$sudo ls -lh /etc/modprobe.d/blacklist.conf</p>
+<p>修改属性<br>$sudo chmod 666 /etc/modprobe.d/blacklist.conf</p>
+<p>用gedit打开<br>$sudo gedit /etc/modpro<br>be.d/blacklist.conf</p>
+<p>在该文件后添加以下几行：</p>
+<p>blacklist vga16fb<br>blacklist nouveau<br>blacklist rivafb<br>blacklist rivatv<br>blacklist nvidiafb</p>
+<p>sudo update-initramfs -u<br>（1）PPA源<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:xorg-edgers/ppa #添加ppa源</span><br><span class="line">sudo add-apt-repository ppa:graphics-drivers/ppa #添加ppa源</span><br><span class="line">sudo apt-get update #更新apt-get</span><br><span class="line">要知道需要安装哪个类型的显卡驱动，可以使用如下指令查看 </span><br><span class="line">sudo add-apt-repository ppa:graphics-drivers</span><br><span class="line"></span><br><span class="line">sudo apt-get remove --purge nvidia*//卸载原有驱动</span><br><span class="line">sudo apt-get install nvidia-387此处根据上面找到的型号下载</span><br><span class="line">sudo apt-get install mesa-common-dev</span><br><span class="line">sudo apt-get install freeglut3-dev</span><br></pre></td></tr></table></figure></p>
+<p>（2）.runfile安装<br>找到适合的正确的驱动，去nvidia驱动官网下载</p>
+<p>卸载掉原有驱动</p>
+<p>sudo apt-get remove –purge nvidia</p>
+<p>禁用X服务<br>执行：</p>
+<p>sudo /etc/init.d/lightdm stop</p>
+<p>安装驱动<br>进入命令行界面<br>Ctrl-Alt+F1</p>
+<p>给驱动run文件赋予执行权限<br>sudo chmod a+x NVIDIA-Linux-x86_64-375.20.run</p>
+<p>安装(注意 参数)<br>sudo ./NVIDIA-Linux-x86_64-375.20.run –no-opengl-files</p>
+<p>–no-opengl-files </p>
+<p>只安装驱动文件，不安装OpenGL文件。这个参数最重要</p>
+<p>–no-x-check </p>
+<p>安装驱动时不检查X服务</p>
+<p>–no-nouveau-check</p>
+<p>安装驱动时不检查nouveau </p>
+<p>后面两个参数可不加。</p>
+<p>（3）用软件和更新安装</p>
+<p><img src="\images\pasted-14.png" alt="upload successful"><br>这种办法可以可以说是最简单的了，但我也失败了</p>
+<p>三种方法里我用过两种，runfile方法由于不太熟悉ubuntu的命令，看不太懂就没尝试，后来在虚拟机里面学习团队教程以后才明白了。</p>
+<h3 id="二-总结"><a href="#二-总结" class="headerlink" title="二.总结"></a>二.总结</h3><p>这次装系统对ubuntu的命令行有了一定的了解，并且装了各种系统，中途甚至搞坏了两次windows，让我对系统的引导有了一定的了解，还有系统的分区等等，总得来说，这两天不亏。</p>
+
+  </section>
+
+  <section class="post-comments">
+
+    <!-- 将评论系统（例如Disqus、多说、友言、畅言等）提供的代码片段粘贴在这里 -->
+    
+</section>
+
+
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2014-2015. | 由<a href="https://hexo.io/">Hexo</a>强力驱动 | 主题<a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/scale.fix.js"></script>
+    
+
+    
+
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="/js/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119540575-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-119540575-1');
+</script>
+
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
