@@ -7,7 +7,7 @@
     
 
     <title>
-      Untitled | 李宜衡的博客 
+      级联表单的学习 | 李宜衡的博客 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,17 +16,25 @@
     
     
 
-    <meta name="description" content="一个记录学习中遇到的问题的个人博客">
+    <meta name="description" content="因为项目需要学院、专业、年级、班级联系起来，所以用了级联的下拉菜单。做这个遇到了不少的困难。甚至开始的时候都不知道这个叫什么，搜索都不知道用什么关键词。后来还是从学长们哪知道这个叫级联，然后张喜硕学长以前也写过，于是在他的代码的基础上终于完成了这个功能。  如何实现的实现这个主要依靠了html标签的onchange属性来触发js的函数。  这一段代码好像是后面用来设置默认选中的  当点击目标并选中">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Untitled | 李宜衡的博客">
-<meta property="og:url" content="http://yoursite.com/2018/08/18/Untitled/index.html">
+<meta property="og:title" content="级联表单的学习 | 李宜衡的博客">
+<meta property="og:url" content="http://yoursite.com/2018/08/23/级联表单的学习/index.html">
 <meta property="og:site_name" content="李宜衡的博客">
-<meta property="og:description" content="一个记录学习中遇到的问题的个人博客">
+<meta property="og:description" content="因为项目需要学院、专业、年级、班级联系起来，所以用了级联的下拉菜单。做这个遇到了不少的困难。甚至开始的时候都不知道这个叫什么，搜索都不知道用什么关键词。后来还是从学长们哪知道这个叫级联，然后张喜硕学长以前也写过，于是在他的代码的基础上终于完成了这个功能。  如何实现的实现这个主要依靠了html标签的onchange属性来触发js的函数。  这一段代码好像是后面用来设置默认选中的  当点击目标并选中">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-18T12:42:28.946Z">
+<meta property="og:image" content="http://yoursite.com/images/2018-08-23_143011.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-16.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-17.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-19.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-20.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-21.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-22.png">
+<meta property="og:updated_time" content="2018-08-23T07:32:25.991Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Untitled | 李宜衡的博客">
-<meta name="twitter:description" content="一个记录学习中遇到的问题的个人博客">
+<meta name="twitter:title" content="级联表单的学习 | 李宜衡的博客">
+<meta name="twitter:description" content="因为项目需要学院、专业、年级、班级联系起来，所以用了级联的下拉菜单。做这个遇到了不少的困难。甚至开始的时候都不知道这个叫什么，搜索都不知道用什么关键词。后来还是从学长们哪知道这个叫级联，然后张喜硕学长以前也写过，于是在他的代码的基础上终于完成了这个功能。  如何实现的实现这个主要依靠了html标签的onchange属性来触发js的函数。  这一段代码好像是后面用来设置默认选中的  当点击目标并选中">
+<meta name="twitter:image" content="http://yoursite.com/images/2018-08-23_143011.png">
     
     
     
@@ -189,12 +197,12 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">Untitled</h1>
+    <h1 class="post-title">级联表单的学习</h1>
 
     
 
     <div class="post-meta">
-      <time datetime="2018-08-18" class="post-meta__date date">2018-08-18</time> 
+      <time datetime="2018-08-23" class="post-meta__date date">2018-08-23</time> 
 
       <span class="post-meta__tags tags">
 
@@ -210,7 +218,20 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    
+    <p>因为项目需要学院、专业、年级、班级联系起来，所以用了级联的下拉菜单。做这个遇到了不少的困难。甚至开始的时候都不知道这个叫什么，搜索都不知道用什么关键词。后来还是从学长们哪知道这个叫级联，然后张喜硕学长以前也写过，于是在他的代码的基础上终于完成了这个功能。</p>
+<p><img src="\images\2018-08-23_143011.png" alt="1"></p>
+<h3 id="如何实现的"><a href="#如何实现的" class="headerlink" title="如何实现的"></a>如何实现的</h3><p>实现这个主要依靠了html标签的onchange属性来触发js的函数。</p>
+<p><img src="\images\pasted-16.png" alt="upload successful"></p>
+<p>这一段代码好像是后面用来设置默认选中的</p>
+<p><img src="\images\pasted-17.png" alt="upload successful"></p>
+<p>当点击目标并选中时就会触发getMajor方法</p>
+<p><img src="\images\pasted-19.png" alt="upload successful"><br>先通过id取得级联的两个目标的节点<br>然后找到被选中目标的value中的值<br>然后通过ajax访问后台的方法<br>取得目标对象<br>然后把目标对象填充到下一个节点的option中去并设置选中状态</p>
+<p><img src="\images\pasted-20.png" alt="upload successful"><br>然后创建一个隐藏的input按钮，以便和from表单配合  </p>
+<p>下面是另外几个用到的函数</p>
+<p><img src="\images\pasted-21.png" alt="upload successful"></p>
+<p><img src="\images\pasted-22.png" alt="upload successful"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>级联的学习运用可以说是收获巨大的，从开始的完全不知如何下手，到面对js的茫然，以及慢慢实现自己想要的功能的成就感，同时学长们的帮助也是巨大的，要是没有学长们提供的帮助，这种功能自己不知道得琢磨到啥时候，毕竟连叫啥名字都不知道。</p>
+
   </section>
 
   <section class="post-comments">

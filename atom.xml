@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-18T12:42:28.946Z</updated>
+  <updated>2018-08-23T07:32:25.991Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,21 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Untitled</title>
-    <link href="http://yoursite.com/2018/08/18/Untitled/"/>
-    <id>http://yoursite.com/2018/08/18/Untitled/</id>
-    <published>2018-08-18T12:42:28.000Z</published>
-    <updated>2018-08-18T12:42:28.946Z</updated>
+    <title>级联表单的学习</title>
+    <link href="http://yoursite.com/2018/08/23/%E7%BA%A7%E8%81%94%E8%A1%A8%E5%8D%95%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2018/08/23/级联表单的学习/</id>
+    <published>2018-08-23T06:21:35.000Z</published>
+    <updated>2018-08-23T07:32:25.991Z</updated>
+    
+    <content type="html"><![CDATA[<p>因为项目需要学院、专业、年级、班级联系起来，所以用了级联的下拉菜单。做这个遇到了不少的困难。甚至开始的时候都不知道这个叫什么，搜索都不知道用什么关键词。后来还是从学长们哪知道这个叫级联，然后张喜硕学长以前也写过，于是在他的代码的基础上终于完成了这个功能。</p><p><img src="\images\2018-08-23_143011.png" alt="1"></p><h3 id="如何实现的"><a href="#如何实现的" class="headerlink" title="如何实现的"></a>如何实现的</h3><p>实现这个主要依靠了html标签的onchange属性来触发js的函数。</p><p><img src="\images\pasted-16.png" alt="upload successful"></p><p>这一段代码好像是后面用来设置默认选中的</p><p><img src="\images\pasted-17.png" alt="upload successful"></p><p>当点击目标并选中时就会触发getMajor方法</p><p><img src="\images\pasted-19.png" alt="upload successful"><br>先通过id取得级联的两个目标的节点<br>然后找到被选中目标的value中的值<br>然后通过ajax访问后台的方法<br>取得目标对象<br>然后把目标对象填充到下一个节点的option中去并设置选中状态</p><p><img src="\images\pasted-20.png" alt="upload successful"><br>然后创建一个隐藏的input按钮，以便和from表单配合  </p><p>下面是另外几个用到的函数</p><p><img src="\images\pasted-21.png" alt="upload successful"></p><p><img src="\images\pasted-22.png" alt="upload successful"></p><h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>级联的学习运用可以说是收获巨大的，从开始的完全不知如何下手，到面对js的茫然，以及慢慢实现自己想要的功能的成就感，同时学长们的帮助也是巨大的，要是没有学长们提供的帮助，这种功能自己不知道得琢磨到啥时候，毕竟连叫啥名字都不知道。</p>]]></content>
     
     <summary type="html">
+    
+      
+      
+        &lt;p&gt;因为项目需要学院、专业、年级、班级联系起来，所以用了级联的下拉菜单。做这个遇到了不少的困难。甚至开始的时候都不知道这个叫什么，搜索都不知道用什么关键词。后来还是从学长们哪知道这个叫级联，然后张喜硕学长以前也写过，于是在他的代码的基础上终于完成了这个功能。&lt;/p&gt;
+&lt;p&gt;&lt;i
+      
     
     </summary>
     
