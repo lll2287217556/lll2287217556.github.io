@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-23T07:32:25.991Z</updated>
+  <updated>2018-08-24T15:37:05.304Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>php中 isset(), empty(), is_null()</title>
+    <link href="http://yoursite.com/2018/08/24/php%E4%B8%AD-isset-empty-is-null/"/>
+    <id>http://yoursite.com/2018/08/24/php中-isset-empty-is-null/</id>
+    <published>2018-08-24T06:43:52.000Z</published>
+    <updated>2018-08-24T15:37:05.304Z</updated>
+    
+    <content type="html"><![CDATA[<p>做项目时发现一个地方用empty（）判断不好使，在陈杰的提醒下知道了还有个is_null（），然后又有个isset（）对这几个方法感觉很迷糊，就上网找了找博客看看，并且总结一下。</p><h3 id="isset"><a href="#isset" class="headerlink" title="isset()"></a>isset()</h3><p>isset()是判断一个变量设定了没如果设定了并且不为null就返回true。<br>当为null或未设定时就返回false。</p><h3 id="is-null"><a href="#is-null" class="headerlink" title="is_null()"></a>is_null()</h3><p> is_null会在三种情况返回true<br> 1.被赋值为null<br> 2.未赋值<br> 3.未定义   </p><p> 和isset在某种意义上可以说是反义词</p><h3 id="empty"><a href="#empty" class="headerlink" title="empty()"></a>empty()</h3><p> 判断变量是否为空<br> “”、0、”0”、NULL、FALSE、array()以及只是单纯定义一个变量$var，这些情况empty()都会返回ture  </p><p> 如果还是不太清楚，这里贴一篇介绍的和清楚的博客</p><p><a href="https://blog.csdn.net/jiaobuchong/article/details/41807011" target="_blank" rel="noopener">https://blog.csdn.net/jiaobuchong/article/details/41807011</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;做项目时发现一个地方用empty（）判断不好使，在陈杰的提醒下知道了还有个is_null（），然后又有个isset（）对这几个方法感觉很迷糊，就上网找了找博客看看，并且总结一下。&lt;/p&gt;
+&lt;h3 id=&quot;isset&quot;&gt;&lt;a href=&quot;#isset&quot; class=&quot;head
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>级联表单的学习</title>
