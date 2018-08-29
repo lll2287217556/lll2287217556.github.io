@@ -7,7 +7,7 @@
     
 
     <title>
-      php中 isset(), empty(), is_null() | 李宜衡的博客 
+      单元测试 | 李宜衡的博客 
     </title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -16,17 +16,21 @@
     
     
 
-    <meta name="description" content="做项目时发现一个地方用empty（）判断不好使，在陈杰的提醒下知道了还有个is_null（），然后又有个isset（）对这几个方法感觉很迷糊，就上网找了找博客看看，并且总结一下。 isset()isset()是判断一个变量设定了没如果设定了并且不为null就返回true。当为null或未设定时就返回false。 is_null() is_null会在三种情况返回true 1.被赋值为null 2.">
+    <meta name="description" content="看了老师的教程，开始的时候对为什么使用单元测试感到很困惑，随着教程的学习和查阅资料渐渐的对单元测试有了了解。 教程中用到的单元测试框架是junit4， spring中已经集成了，不用单独配置，单元测试有什么用？刚开始学时可能体会不到，因为我们在学习sthinkphp时已经习惯了写完一个完整的功能后再添加数据去测试功能，而单元测试是写完一个小功能后就测试一下，虽然需要多写一部分代码但从长期来看，可以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php中 isset(), empty(), is_null() | 李宜衡的博客">
-<meta property="og:url" content="http://yoursite.com/2018/08/24/php中-isset-empty-is-null/index.html">
+<meta property="og:title" content="单元测试 | 李宜衡的博客">
+<meta property="og:url" content="http://yoursite.com/2018/08/29/单元测试/index.html">
 <meta property="og:site_name" content="李宜衡的博客">
-<meta property="og:description" content="做项目时发现一个地方用empty（）判断不好使，在陈杰的提醒下知道了还有个is_null（），然后又有个isset（）对这几个方法感觉很迷糊，就上网找了找博客看看，并且总结一下。 isset()isset()是判断一个变量设定了没如果设定了并且不为null就返回true。当为null或未设定时就返回false。 is_null() is_null会在三种情况返回true 1.被赋值为null 2.">
+<meta property="og:description" content="看了老师的教程，开始的时候对为什么使用单元测试感到很困惑，随着教程的学习和查阅资料渐渐的对单元测试有了了解。 教程中用到的单元测试框架是junit4， spring中已经集成了，不用单独配置，单元测试有什么用？刚开始学时可能体会不到，因为我们在学习sthinkphp时已经习惯了写完一个完整的功能后再添加数据去测试功能，而单元测试是写完一个小功能后就测试一下，虽然需要多写一部分代码但从长期来看，可以">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-29T09:14:40.297Z">
+<meta property="og:image" content="http://yoursite.com/images/pasted-23.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-24.png">
+<meta property="og:image" content="http://yoursite.com/images/pasted-25.png">
+<meta property="og:updated_time" content="2018-08-29T11:39:34.776Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="php中 isset(), empty(), is_null() | 李宜衡的博客">
-<meta name="twitter:description" content="做项目时发现一个地方用empty（）判断不好使，在陈杰的提醒下知道了还有个is_null（），然后又有个isset（）对这几个方法感觉很迷糊，就上网找了找博客看看，并且总结一下。 isset()isset()是判断一个变量设定了没如果设定了并且不为null就返回true。当为null或未设定时就返回false。 is_null() is_null会在三种情况返回true 1.被赋值为null 2.">
+<meta name="twitter:title" content="单元测试 | 李宜衡的博客">
+<meta name="twitter:description" content="看了老师的教程，开始的时候对为什么使用单元测试感到很困惑，随着教程的学习和查阅资料渐渐的对单元测试有了了解。 教程中用到的单元测试框架是junit4， spring中已经集成了，不用单独配置，单元测试有什么用？刚开始学时可能体会不到，因为我们在学习sthinkphp时已经习惯了写完一个完整的功能后再添加数据去测试功能，而单元测试是写完一个小功能后就测试一下，虽然需要多写一部分代码但从长期来看，可以">
+<meta name="twitter:image" content="http://yoursite.com/images/pasted-23.png">
     
     
     
@@ -189,12 +193,12 @@ classes that you can use:
 
   <header class="post-header">
     
-    <h1 class="post-title">php中 isset(), empty(), is_null()</h1>
+    <h1 class="post-title">单元测试</h1>
 
     
 
     <div class="post-meta">
-      <time datetime="2018-08-24" class="post-meta__date date">2018-08-24</time> 
+      <time datetime="2018-08-29" class="post-meta__date date">2018-08-29</time> 
 
       <span class="post-meta__tags tags">
 
@@ -210,13 +214,20 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p>做项目时发现一个地方用empty（）判断不好使，在陈杰的提醒下知道了还有个is_null（），然后又有个isset（）对这几个方法感觉很迷糊，就上网找了找博客看看，并且总结一下。</p>
-<h3 id="isset"><a href="#isset" class="headerlink" title="isset()"></a>isset()</h3><p>isset()是判断一个变量设定了没如果设定了并且不为null就返回true。<br>当为null或未设定时就返回false。</p>
-<h3 id="is-null"><a href="#is-null" class="headerlink" title="is_null()"></a>is_null()</h3><p> is_null会在三种情况返回true<br> 1.被赋值为null<br> 2.未赋值<br> 3.未定义   </p>
-<p> 和isset在某种意义上可以说是反义词</p>
-<h3 id="empty"><a href="#empty" class="headerlink" title="empty()"></a>empty()</h3><p>  “”、0、”0”、NULL、FALSE、array()以及只是单纯定义一个变量$var，这些情况empty()都会返回ture  </p>
-<p> 如果还是不太清楚，这里贴一篇介绍的和清楚的博客</p>
-<p><a href="https://blog.csdn.net/jiaobuchong/article/details/41807011" target="_blank" rel="noopener">https://blog.csdn.net/jiaobuchong/article/details/41807011</a></p>
+    <p>看了老师的教程，开始的时候对为什么使用单元测试感到很困惑，随着教程的学习和查阅资料渐渐的对单元测试有了了解。</p>
+<p>教程中用到的单元测试框架是junit4， spring中已经集成了，不用单独配置，单元测试有什么用？刚开始学时可能体会不到，因为我们在学习sthinkphp时已经习惯了写完一个完整的功能后再添加数据去测试功能，而单元测试是写完一个小功能后就测试一下，虽然需要多写一部分代码<br>但从长期来看，可以提高代码质量，减少维护成本，不用在任务完成以后一大推代码中找bug</p>
+<h3 id="单元测试中用到的注解"><a href="#单元测试中用到的注解" class="headerlink" title="单元测试中用到的注解"></a>单元测试中用到的注解</h3><p><img src="\images\pasted-23.png" alt="upload successful"></p>
+<p>红框中的两个是测试必须的，他表示了这是一个测试类<br>这两个注解应该放在类的上面<br>红框下的这个注解是表示事务的，这里不重点讨论。  </p>
+<p><img src="\images\pasted-24.png" alt="upload successful"></p>
+<p>每一个测试的方法上都需要一个@Test注解，表示这是一个测试</p>
+<h3 id="什么时候测"><a href="#什么时候测" class="headerlink" title="什么时候测"></a>什么时候测</h3><p>单元测试需要在两个阶段测试</p>
+<p>（1）一是在具体实现代码之前，这是测试驱动开发（TDD）所提倡的；</p>
+<p>（2）二是功能代码完成后。</p>
+<h3 id="mock"><a href="#mock" class="headerlink" title="mock"></a>mock</h3><p>开始看到mock这个东西的时候，感觉很迷惑，不太明白这个是干什么的，所以就找了篇博客看了看  </p>
+<p>mock测试就是在测试过程中，对于某些不容易构造或者不容易获取的对象，用一个虚拟的对象来创建以便测试的测试方法。</p>
+<p><img src="\images\pasted-25.png" alt="upload successful"></p>
+<p>mock的使用就如上图所示</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>对于单元测试，开始接触时，我们肯定会感到很迷茫，不知道从何开始，幸好，潘老师给我们写好了实例代码，照着例子一步一步熟悉，渐渐就会了，还有一定不要怕麻烦，现在多的几行代码，可能会节省改bug一天的时间。</p>
 
   </section>
 
