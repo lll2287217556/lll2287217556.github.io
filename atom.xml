@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-29T11:39:34.776Z</updated>
+  <updated>2018-09-01T01:52:59.556Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>配置idea自动生成javadoc</title>
+    <link href="http://yoursite.com/2018/09/01/%E9%85%8D%E7%BD%AEidea%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90javadoc/"/>
+    <id>http://yoursite.com/2018/09/01/配置idea自动生成javadoc/</id>
+    <published>2018-09-01T01:16:17.000Z</published>
+    <updated>2018-09-01T01:52:59.556Z</updated>
+    
+    <content type="html"><![CDATA[<p>随着学习的深入，开发也应该走向规范化，注释就是很重要的一个方面，一个规范的注释应该让别人能一眼知道，他需要传什么才能用这个方法，用了这个方法他能得到什么，而且就如潘老师所说，还应该编码者的名字，如果这方法有问题可以迅速的找到他。</p><p><img src="\images\pasted-26.png" alt="upload successful"></p><p>但是每次都慢慢编写注释无疑比较麻烦，有的人就不太愿意写，还好idea给我们提供了javedoc模板，模板创建完成以后只需几个快键键就可以创建一个规范的注释。</p><h3 id="创建模板"><a href="#创建模板" class="headerlink" title="创建模板"></a>创建模板</h3><h5 id="首先是类的注释"><a href="#首先是类的注释" class="headerlink" title="首先是类的注释"></a>首先是类的注释</h5><p><img src="\images\pasted-27.png" alt="upload successful"></p><p>打开设置，进入【 Editor | File and Code Templates】<br>选择【includes】选择file header,在右侧填入如下代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/** </span><br><span class="line">* </span><br><span class="line">* @author yourname </span><br><span class="line">* @date $&#123;DATE&#125; $&#123;TIME&#125; </span><br><span class="line">*/</span><br></pre></td></tr></table></figure></p><p>当然你可以在里面添加任何你想添加的注释的东西，其中有$标志的代表动态获取，效果如下</p><p><img src="\images\pasted-28.png" alt="upload successful"></p><p>类的注释会在类完成时，自动添加</p><h5 id="方法的注释"><a href="#方法的注释" class="headerlink" title="方法的注释"></a>方法的注释</h5><p>这个稍微麻烦一些，首先需要新建一个group<br><img src="\images\pasted-29.png" alt="upload successful"></p><p>然后选中新建的group，还是那个地方选择live template</p><p><img src="\images\pasted-30.png" alt="upload successful"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">**</span><br><span class="line"> *</span><br><span class="line"> * @param: $params$</span><br><span class="line"> * @return $returns$</span><br><span class="line"> * @author liyiheng</span><br><span class="line"> * @date $date$ $time$ </span><br><span class="line"> */</span><br></pre></td></tr></table></figure></p><p>之所以没有斜杠，是测试以后比较好。<br>最后一步，点击edit variables配置Expression</p><p><img src="\images\pasted-31.png" alt="upload successful"></p><p>大功告成</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;随着学习的深入，开发也应该走向规范化，注释就是很重要的一个方面，一个规范的注释应该让别人能一眼知道，他需要传什么才能用这个方法，用了这个方法他能得到什么，而且就如潘老师所说，还应该编码者的名字，如果这方法有问题可以迅速的找到他。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;\imag
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>单元测试</title>
